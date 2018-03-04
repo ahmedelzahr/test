@@ -1,11 +1,7 @@
-import models
-import store
-import dummy_data
+
 from flask import render_template,request,redirect ,url_for
-from app import app
-post_store=store.PostStore()
-member_store=store.MemberStore()
-dummy_data.seed_stores(member_store, post_store)
+from app import models
+from app import app, member_store, post_store
 @app.route("/")
 def home():
     return render_template("index.html",posts=post_store.get_all())

@@ -1,5 +1,5 @@
-import models
-import store
+from app import models
+from app import store
 
 
 def create_members():
