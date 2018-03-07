@@ -14,3 +14,8 @@ def topic_add():
 
     else:
         return render_template("topic_add.html")
+
+@app.route("/tobic/delete/<id>")
+def topic_delete(id):
+    post_store.delete(int(id))
+    return redirect(url_for("home"))

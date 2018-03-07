@@ -1,29 +1,29 @@
 <!doctype html>
 <link rel="stylesheet" type="text/css" href="/static/style.css" >
 <head>
-	<title>My 1st page</title>
+  <title>My 1st page</title>
   <h4>done by:Ahmed Elzahar</h4>
 
 </head>
 <body>
   <div id="my_header">
     <h1>My firest site</h1>
-	<button type="button"> 
-		<a href="#profile">Profile</a>
-	</button>
-	<button type="button"> 
-		<a href="#members">Members</a>
-	</button>
-	<button type="button"> 
-		<a href="#top">Top Members</a>
-	</button>
+  <button type="button"> 
+    <a href="#profile">Profile</a>
+  </button>
+  <button type="button"> 
+    <a href="#members">Members</a>
+  </button>
+  <button type="button"> 
+    <a href="#top">Top Members</a>
+  </button>
 </div>
   
-	<hr>
-	<button type="button"> 
-		<a href="/topic/add">Create</a>
-	</button>
-	<ul>
+  <hr>
+  <button type="button"> 
+    <a href="/topic/add">Create</a>
+  </button>
+  <ul>
   <table>
     <col width="130">
     <col width="130">
@@ -37,11 +37,10 @@
   <tr>
     <td>{{post.title}}</td>
     <td><button>edit</button></td>
-    <td><button>delete</button></td>
+    <td><button><a href="{{ url_for('topic_delete', id = post.id) }}">delete</a></button></td>
   </tr>
   {% endfor %}
   
 </table>
 </ul>
 </body>
-
