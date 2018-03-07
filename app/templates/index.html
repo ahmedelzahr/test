@@ -36,7 +36,7 @@
   {% for post in posts %}
   <tr>
     <td>{{post.title}}</td>
-    <td><button>edit</button></td>
+    <td><button><a href="{{ url_for('topic_edit', id = post.id) }}">edit</a></button></td>
     <td><button><a href="{{ url_for('topic_delete', id = post.id) }}">delete</a></button></td>
   </tr>
   {% endfor %}

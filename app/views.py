@@ -19,3 +19,15 @@ def topic_add():
 def topic_delete(id):
     post_store.delete(int(id))
     return redirect(url_for("home"))
+
+@app.route("/tobic/edit/<id>", methods = ["GET", "POST"])  
+def topic_edit(id):
+    if request.method == "POST":
+    	post=post_store.get_by_id(int(id))
+        post.title = request.form["title"]
+        post.subject=request.form["content"]
+        post_store.update(post)
+        return redirect(url_for("home"))
+        
+    else:
+        return render_template("topic_edit.html",po=post_store.get_by_id(int(id)))    
