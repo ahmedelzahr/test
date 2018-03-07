@@ -30,4 +30,4 @@ def topic_edit(id):
         return redirect(url_for("home"))
 
     else:
-        return render_template("topic_edit.html",po=post_store.get_by_id(id)    
+        return render_template("topic_edit.html",po=post_store.get_by_id(id))    
