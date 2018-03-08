@@ -11,7 +11,6 @@ def topic_add():
         new_post = models.Post(request.form["title"], request.form["content"])
         post_store.add(new_post)
         return redirect(url_for("home"))
-
     else:
         return render_template("topic_add.html")
 
@@ -26,7 +25,7 @@ def topic_edit(id):
     	post=post_store.get_by_id(id)
         post.title = request.form["title"]
         post.subject=request.form["content"]
+        post_store.update(post)
         return redirect(url_for("home"))
-
     else:
         return render_template("topic_edit.html",po=post_store.get_by_id(id))    
